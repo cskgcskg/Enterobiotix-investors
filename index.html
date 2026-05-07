@@ -368,6 +368,215 @@
     line-height: 1.4;
   }
 
+  /* ───── Cap table ───── */
+  .cap-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    border: 1px solid var(--rule);
+    background: var(--bg-card);
+    margin-bottom: 28px;
+  }
+  .cap-meta-cell {
+    padding: 22px 24px;
+    border-right: 1px solid var(--rule);
+  }
+  .cap-meta-cell:last-child { border-right: none; }
+  .cap-meta-lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .cap-meta-val {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .cap-meta-val em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .cap-meta-sub {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  .cap-classes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  .cap-class {
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent);
+  }
+  .cap-class.pref { border-top-color: var(--accent-warm); }
+  .cap-class-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .cap-class-shares {
+    font-family: 'Fraunces', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .cap-class-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+  .cap-class .cap-class.pref .cap-class-pct { color: var(--accent-warm); }
+  .cap-bar {
+    margin-top: 16px;
+    height: 6px;
+    background: var(--rule);
+    overflow: hidden;
+    position: relative;
+  }
+  .cap-bar-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    background: var(--accent);
+  }
+  .cap-class.pref .cap-bar-fill { background: var(--accent-warm); }
+  .cap-class-note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+
+  .cap-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .cap-table thead th {
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    font-weight: 500;
+    padding: 12px 14px;
+    border-bottom: 1.5px solid var(--rule-strong);
+  }
+  .cap-table thead th.right { text-align: right; }
+  .cap-table tbody td {
+    padding: 14px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-soft);
+    vertical-align: middle;
+  }
+  .cap-table tbody tr:hover td { background: rgba(45,90,61,0.025); }
+  .cap-table tbody tr.totals td {
+    background: var(--bg-card);
+    border-top: 1.5px solid var(--rule-strong);
+    border-bottom: 1.5px solid var(--rule-strong);
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .cap-table .rank {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 18px;
+    width: 50px;
+  }
+  .cap-table .name {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .cap-table .num {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .cap-table .pct {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .cap-table .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--bg-card);
+    white-space: nowrap;
+  }
+  .cap-table .tag.ord { color: var(--accent); border-color: var(--accent); }
+  .cap-table .tag.pref { color: var(--accent-warm); border-color: var(--accent-warm); }
+  .cap-table .tag.both { color: var(--ink); border-color: var(--rule-strong); }
+
+  .cap-download {
+    margin-top: 28px;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cap-download-text {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    flex: 1 1 320px;
+  }
+  .cap-download-text strong { color: var(--ink); font-weight: 500; }
+  .cap-download a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--bg);
+    background: var(--accent);
+    text-decoration: none;
+    padding: 14px 20px;
+    border: 1px solid var(--accent);
+    transition: all 0.3s;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .cap-download a:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
   /* ───── Sources ───── */
   .sources {
     margin-top: 48px;
@@ -434,6 +643,9 @@
     .timeline-track { grid-template-columns: 1fr; gap: 24px; }
     .timeline::before { display: none; }
     .container { padding: 0 20px; }
+    .cap-classes { grid-template-columns: 1fr; }
+    .cap-table thead th:nth-child(3),
+    .cap-table tbody td:nth-child(3) { display: none; }
   }
 </style>
 </head>
@@ -472,7 +684,7 @@
 
   <div class="verify">
     <div class="verify-label">Verification Note</div>
-    Source-checked against company press releases, GlobeNewswire, FinSMEs, Fierce Biotech, SIS Ventures and the Kineticos site. <strong>One correction was applied:</strong> the original input listed the Series A as "Sep 2025"; primary sources confirm it closed in <strong>September 2021</strong>. The April 2026 £19m round and the April 2024 £27m round are both correctly dated.
+    Source-checked against company press releases, GlobeNewswire, FinSMEs, Fierce Biotech, SIS Ventures and the Kineticos site. <strong>One correction was applied:</strong> the original input listed the Series A as "Sep 2025"; primary sources confirm it closed in <strong>September 2021</strong>. The April 2026 £19m round and the April 2024 £27m round are both correctly dated. The capitalisation table in <strong>§ 03</strong> is built from the CS01 confirmation statement and reconciles to the printed Statement of Capital totals (3,448,318 Ordinary + 4,500,767 Preferred = 7,949,085) with zero variance.
   </div>
 
   <!-- ─── Investors ─── -->
@@ -599,9 +811,246 @@
     </div>
   </div>
 
-  <!-- ─── Sources ─── -->
+  <!-- ─── Cap table ─── -->
   <div class="section-head">
     <div class="section-num">§ 03</div>
+    <h2>Capitalisation table</h2>
+  </div>
+
+  <p style="font-size:15px;color:var(--ink-soft);max-width:760px;margin-bottom:28px;line-height:1.6;">
+    Built from the Companies House <strong style="color:var(--ink);">CS01 Confirmation Statement</strong> filed on 4 June 2025 (confirmation date 19 April 2025). All shareholder lines reconcile exactly to the Statement of Capital — see the verification block below.
+  </p>
+
+  <div class="cap-meta">
+    <div class="cap-meta-cell">
+      <div class="cap-meta-lbl">Total issued shares</div>
+      <div class="cap-meta-val"><em>7,949,085</em></div>
+      <div class="cap-meta-sub">Across two share classes</div>
+    </div>
+    <div class="cap-meta-cell">
+      <div class="cap-meta-lbl">Aggregate nominal value</div>
+      <div class="cap-meta-val">£7,949.085</div>
+      <div class="cap-meta-sub">£0.001 nominal per share · £0.00 unpaid</div>
+    </div>
+    <div class="cap-meta-cell">
+      <div class="cap-meta-lbl">Holders on the register</div>
+      <div class="cap-meta-val">128 <span style="font-size:14px;color:var(--ink-soft);font-style:normal;">unique</span></div>
+      <div class="cap-meta-sub">111 Ordinary lines · 34 Preferred lines</div>
+    </div>
+    <div class="cap-meta-cell">
+      <div class="cap-meta-lbl">Confirmation date</div>
+      <div class="cap-meta-val">19 Apr 2025</div>
+      <div class="cap-meta-sub">SC559230 · authenticated by J. McIlroy</div>
+    </div>
+  </div>
+
+  <div class="cap-classes">
+    <div class="cap-class">
+      <div class="cap-class-name">Ordinary shares</div>
+      <div class="cap-class-shares">3,448,318</div>
+      <div class="cap-class-pct">43.38% of issued capital</div>
+      <div class="cap-bar"><div class="cap-bar-fill" style="width:43.38%"></div></div>
+      <p class="cap-class-note">£0.001 nominal each. Each holder votes 1-per-share at general meetings, with public-sector trigger caps applied to Bank/SE blocks under the 28 March 2025 Articles.</p>
+    </div>
+    <div class="cap-class pref">
+      <div class="cap-class-name">Preferred Ordinary shares</div>
+      <div class="cap-class-shares">4,500,767</div>
+      <div class="cap-class-pct">56.62% of issued capital</div>
+      <div class="cap-bar"><div class="cap-bar-fill" style="width:56.62%"></div></div>
+      <p class="cap-class-note">£0.001 nominal each. Preference Amount of £7.981 (First Subscription) or £8.7791 (Second Subscription). 99% of surplus assets in liquidation up to the aggregate Preference Amount.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:-0.01em;margin:24px 0 14px;color:var(--ink);">Top 15 shareholders <span style="font-size:13px;font-family:'JetBrains Mono',monospace;font-weight:400;color:var(--ink-faint);letter-spacing:0.1em;">· combined across both classes</span></h3>
+
+  <div style="overflow-x:auto;">
+  <table class="cap-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Shareholder</th>
+        <th>Class</th>
+        <th class="right">Ordinary</th>
+        <th class="right">Preferred</th>
+        <th class="right">Total shares</th>
+        <th class="right">% issued</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">i.</td>
+        <td class="name">Mark R Bamforth, Trustee — Thairm Bio Nominee Trust B</td>
+        <td><span class="tag both">Ord + Pref</span></td>
+        <td class="num">691,488</td>
+        <td class="num">1,773,765</td>
+        <td class="num">2,465,253</td>
+        <td class="pct">31.01%</td>
+      </tr>
+      <tr>
+        <td class="rank">ii.</td>
+        <td class="name">Scottish National Investment Bank PLC</td>
+        <td><span class="tag pref">Pref</span></td>
+        <td class="num">—</td>
+        <td class="num">1,207,412</td>
+        <td class="num">1,207,412</td>
+        <td class="pct">15.19%</td>
+      </tr>
+      <tr>
+        <td class="rank">iii.</td>
+        <td class="name">Mark R Bamforth, Trustee — Thairm Bio Nominee Trust A</td>
+        <td><span class="tag ord">Ord</span></td>
+        <td class="num">918,400</td>
+        <td class="num">—</td>
+        <td class="num">918,400</td>
+        <td class="pct">11.55%</td>
+      </tr>
+      <tr>
+        <td class="rank">iv.</td>
+        <td class="name">Scottish Enterprise</td>
+        <td><span class="tag both">Ord + Pref</span></td>
+        <td class="num">606,754</td>
+        <td class="num">239,617</td>
+        <td class="num">846,371</td>
+        <td class="pct">10.65%</td>
+      </tr>
+      <tr>
+        <td class="rank">v.</td>
+        <td class="name">Kineticos Disruptor Fund II, L.P.</td>
+        <td><span class="tag pref">Pref</span></td>
+        <td class="num">—</td>
+        <td class="num">658,593</td>
+        <td class="num">658,593</td>
+        <td class="pct">8.28%</td>
+      </tr>
+      <tr>
+        <td class="rank">vi.</td>
+        <td class="name">James Roger McIlroy</td>
+        <td><span class="tag ord">Ord</span></td>
+        <td class="num">255,405</td>
+        <td class="num">—</td>
+        <td class="num">255,405</td>
+        <td class="pct">3.21%</td>
+      </tr>
+      <tr>
+        <td class="rank">vii.</td>
+        <td class="name">Kineticos Disruptor Fund II EBX, LLC</td>
+        <td><span class="tag pref">Pref</span></td>
+        <td class="num">—</td>
+        <td class="num">246,164</td>
+        <td class="num">246,164</td>
+        <td class="pct">3.10%</td>
+      </tr>
+      <tr>
+        <td class="rank">viii.</td>
+        <td class="name">Roger McIlroy</td>
+        <td><span class="tag ord">Ord</span></td>
+        <td class="num">100,179</td>
+        <td class="num">—</td>
+        <td class="num">100,179</td>
+        <td class="pct">1.26%</td>
+      </tr>
+      <tr>
+        <td class="rank">ix.</td>
+        <td class="name">The Bank Workers Charity</td>
+        <td><span class="tag ord">Ord</span></td>
+        <td class="num">95,669</td>
+        <td class="num">—</td>
+        <td class="num">95,669</td>
+        <td class="pct">1.20%</td>
+      </tr>
+      <tr>
+        <td class="rank">x.</td>
+        <td class="name">Kineticos Disruptor Fund EB9, LLC</td>
+        <td><span class="tag ord">Ord</span></td>
+        <td class="num">92,489</td>
+        <td class="num">—</td>
+        <td class="num">92,489</td>
+        <td class="pct">1.16%</td>
+      </tr>
+      <tr>
+        <td class="rank">xi.</td>
+        <td class="name">Iain Baird</td>
+        <td><span class="tag both">Ord + Pref</span></td>
+        <td class="num">23,982</td>
+        <td class="num">55,726</td>
+        <td class="num">79,708</td>
+        <td class="pct">1.00%</td>
+      </tr>
+      <tr>
+        <td class="rank">xii.</td>
+        <td class="name">Yike Holdings Limited</td>
+        <td><span class="tag pref">Pref</span></td>
+        <td class="num">—</td>
+        <td class="num">75,178</td>
+        <td class="num">75,178</td>
+        <td class="pct">0.95%</td>
+      </tr>
+      <tr>
+        <td class="rank">xiii.</td>
+        <td class="name">Impact Ventures Scotland Limited</td>
+        <td><span class="tag ord">Ord</span></td>
+        <td class="num">69,011</td>
+        <td class="num">—</td>
+        <td class="num">69,011</td>
+        <td class="pct">0.87%</td>
+      </tr>
+      <tr>
+        <td class="rank">xiv.</td>
+        <td class="name">Syndicate Room Nominees Ltd</td>
+        <td><span class="tag both">Ord + Pref</span></td>
+        <td class="num">56,465</td>
+        <td class="num">2,736</td>
+        <td class="num">59,201</td>
+        <td class="pct">0.74%</td>
+      </tr>
+      <tr>
+        <td class="rank">xv.</td>
+        <td class="name">Mark R Bamforth Family Trust</td>
+        <td><span class="tag ord">Ord</span></td>
+        <td class="num">36,789</td>
+        <td class="num">—</td>
+        <td class="num">36,789</td>
+        <td class="pct">0.46%</td>
+      </tr>
+      <tr class="totals">
+        <td></td>
+        <td>Top 15 subtotal</td>
+        <td></td>
+        <td class="num">2,946,631</td>
+        <td class="num">4,259,191</td>
+        <td class="num">7,205,822</td>
+        <td class="pct">90.65%</td>
+      </tr>
+      <tr class="totals">
+        <td></td>
+        <td>All 128 holders — total issued</td>
+        <td></td>
+        <td class="num">3,448,318</td>
+        <td class="num">4,500,767</td>
+        <td class="num">7,949,085</td>
+        <td class="pct">100.00%</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="verify" style="margin-top:32px;">
+    <div class="verify-label">Reconciliation check</div>
+    Sum of all 111 Ordinary lines = <strong>3,448,318</strong> · matches CS01 B1 printed total · diff 0.<br>
+    Sum of all 34 Preferred Ordinary lines = <strong>4,500,767</strong> · matches CS01 B1 printed total · diff 0.<br>
+    Combined total = <strong>7,949,085</strong> · matches the CS01 grand total · diff 0. Two share transfers recorded in the period (Nicholas C. Kuenssberg, 5,030 Ordinary on 11/06/2024 → balance nil; Scottish Investments Limited, 751,785 Preferred on 31/08/2024 → balance nil) are reflected in the closing-date positions above.
+  </div>
+
+  <div class="cap-download">
+    <div class="cap-download-text">
+      <strong>EnteroBiotix_CapTable.xlsx</strong> — full holder-by-holder workbook with Summary, Ordinary, Preferred Ordinary and Notes sheets. Live formulas drive every percentage and reconciliation check, so the totals stay green if any line is edited.
+    </div>
+    <a href="EnteroBiotix_CapTable.xlsx" download>Download Excel ↓</a>
+  </div>
+
+  <!-- ─── Sources ─── -->
+  <div class="section-head">
+    <div class="section-num">§ 04</div>
     <h2>Primary sources</h2>
   </div>
 
@@ -655,6 +1104,14 @@
       <a href="https://www.enterobiotix.com/" target="_blank" rel="noopener">
         <span>EnteroBiotix</span>
         Company website
+      </a>
+      <a href="companies_house_document.pdf" target="_blank" rel="noopener">
+        <span>Companies House · Jun 2025</span>
+        CS01 confirmation statement (cap table source)
+      </a>
+      <a href="https://find-and-update.company-information.service.gov.uk/company/SC559230" target="_blank" rel="noopener">
+        <span>Companies House Register</span>
+        EnteroBiotix Limited (SC559230)
       </a>
     </div>
   </div>
