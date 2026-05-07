@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnteroBiotix — Key Investors & Funding Rounds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --bg-card: #fbfaf6;
+    --ink: #1a1d1a;
+    --ink-soft: #4a4d48;
+    --ink-faint: #8a8d86;
+    --accent: #2d5a3d;        /* deep clinical green */
+    --accent-bright: #4a8b5f;
+    --accent-warm: #b8541c;   /* copper */
+    --rule: #d8d4c8;
+    --rule-strong: #1a1d1a;
+    --highlight: #f0e6cf;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    font-feature-settings: "ss01", "cv11";
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(45,90,61,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(184,84,28,0.04) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  .grain {
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ───── Masthead ───── */
+  .masthead {
+    border-bottom: 1.5px solid var(--rule-strong);
+    padding: 28px 0 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .masthead-left {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+  }
+  .masthead-left strong { color: var(--accent); font-weight: 500; }
+  .masthead-right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+  }
+
+  /* ───── Hero ───── */
+  .hero {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    align-items: end;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-warm);
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px; height: 1px;
+    background: var(--accent-warm);
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(52px, 7vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .deck {
+    margin-top: 28px;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 600px;
+    font-weight: 300;
+  }
+
+  .stat-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    border-left: 1px solid var(--rule);
+    padding-left: 24px;
+  }
+  .stat-block .num {
+    font-family: 'Fraunces', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-block .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+
+  /* ───── Verification banner ───── */
+  .verify {
+    margin-top: 48px;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent-warm);
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .verify-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent-warm);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .verify strong { color: var(--ink); font-weight: 500; }
+
+  /* ───── Section heading ───── */
+  .section-head {
+    margin: 100px 0 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: -0.015em;
+  }
+
+  /* ───── Investor cards ───── */
+  .investors {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .investor {
+    display: grid;
+    grid-template-columns: 80px 1fr 280px;
+    gap: 32px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+    transition: background 0.3s ease;
+  }
+  .investor:hover {
+    background: rgba(45,90,61,0.025);
+  }
+  .investor:last-child { border-bottom: 1.5px solid var(--rule-strong); }
+
+  .investor-num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-style: italic;
+  }
+
+  .investor-body h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+  }
+  .investor-body h3 a {
+    color: var(--ink);
+    text-decoration: none;
+    background-image: linear-gradient(to right, var(--accent), var(--accent));
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.4s ease, color 0.3s ease;
+  }
+  .investor-body h3 a:hover {
+    color: var(--accent);
+    background-size: 100% 1px;
+  }
+  .investor-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-warm);
+    margin-bottom: 16px;
+  }
+  .investor-role {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    max-width: 540px;
+  }
+
+  .rounds-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .rounds-list li {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding: 8px 0;
+    border-top: 1px dashed var(--rule);
+  }
+  .rounds-list li:first-child { border-top: 1px solid var(--rule); }
+  .round-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .round-detail a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .round-detail a:hover { border-bottom-color: var(--accent); }
+  .round-detail .amount {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ───── Funding timeline ───── */
+  .timeline-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    padding: 40px 36px;
+    margin-top: 32px;
+  }
+
+  .timeline {
+    position: relative;
+    padding: 20px 0;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 1px;
+    background: var(--rule-strong);
+  }
+  .timeline-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .tl-event {
+    background: var(--bg-card);
+    padding: 0 8px;
+    text-align: center;
+  }
+  .tl-dot {
+    width: 14px; height: 14px;
+    background: var(--bg-card);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    position: relative;
+  }
+  .tl-dot.lg {
+    background: var(--accent);
+    width: 18px; height: 18px;
+  }
+  .tl-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .tl-amt {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .tl-leads {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* ───── Sources ───── */
+  .sources {
+    margin-top: 48px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .sources h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .sources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px 24px;
+  }
+  .sources-grid a {
+    display: block;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 0;
+    transition: color 0.2s, padding-left 0.2s;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+  }
+  .sources-grid a:hover {
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+  .sources-grid a span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  /* ───── Footer ───── */
+  footer {
+    padding: 60px 0 80px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+  }
+  footer p { margin-bottom: 8px; }
+
+  /* ───── Responsive ───── */
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; gap: 48px; }
+    .stat-stack { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; flex-direction: row; gap: 36px; flex-wrap: wrap; }
+    .investor { grid-template-columns: 50px 1fr; gap: 16px; }
+    .investor-num { font-size: 36px; }
+    .rounds-list { grid-column: 1 / -1; margin-top: 8px; }
+    .timeline-track { grid-template-columns: 1fr; gap: 24px; }
+    .timeline::before { display: none; }
+    .container { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="container">
+
+  <header class="masthead">
+    <div class="masthead-left">EnteroBiotix Ltd. <span style="margin: 0 8px; opacity:0.5;">/</span> <strong>Investor Dossier</strong></div>
+    <div class="masthead-right">Verified · May 2026</div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Capital Stack · 2017 → 2026</div>
+      <h1>The backers behind <em>Scotland's</em> microbiome bet.</h1>
+      <p class="deck">A Glasgow-headquartered biopharmaceutical company building full-spectrum microbiome therapeutics has now drawn over £65m in cumulative investment across five disclosed rounds. This dossier audits each named investor, the rounds they participated in, and links to primary sources.</p>
+    </div>
+    <aside class="stat-stack">
+      <div class="stat-block">
+        <div class="num">£65m+</div>
+        <div class="lbl">Total raised since 2017</div>
+      </div>
+      <div class="stat-block">
+        <div class="num">5</div>
+        <div class="lbl">Named institutional investors</div>
+      </div>
+      <div class="stat-block">
+        <div class="num">£19m</div>
+        <div class="lbl">Latest round, Apr 2026</div>
+      </div>
+    </aside>
+  </section>
+
+  <div class="verify">
+    <div class="verify-label">Verification Note</div>
+    Source-checked against company press releases, GlobeNewswire, FinSMEs, Fierce Biotech, SIS Ventures and the Kineticos site. <strong>One correction was applied:</strong> the original input listed the Series A as "Sep 2025"; primary sources confirm it closed in <strong>September 2021</strong>. The April 2026 £19m round and the April 2024 £27m round are both correctly dated.
+  </div>
+
+  <!-- ─── Investors ─── -->
+  <div class="section-head">
+    <div class="section-num">§ 01</div>
+    <h2>The investors</h2>
+  </div>
+
+  <div class="investors">
+
+    <article class="investor">
+      <div class="investor-num">i.</div>
+      <div class="investor-body">
+        <h3><a href="https://www.thairm.com/" target="_blank" rel="noopener">Thairm Bio</a></h3>
+        <div class="investor-type">Life Sciences VC · Most active lead</div>
+        <p class="investor-role">Lead investor across multiple rounds since 2021. Described in coverage as a US-based life science investor; chaired by Mark R. Bamforth, who has spoken publicly on the company's microbiome supply-chain thesis.</p>
+        <ul class="rounds-list">
+          <li><span class="round-date">Apr 2026</span><span class="round-detail">Co-led <span class="amount">£19m</span> financing for Phase 2b RISE trial</span></li>
+          <li><span class="round-date">Apr 2024</span><span class="round-detail">Backed <span class="amount">£27m</span> round (Phase 2 advancement)</span></li>
+          <li><span class="round-date">Sep 2021</span><span class="round-detail">Led <span class="amount">$21.5m</span> Series A</span></li>
+        </ul>
+      </div>
+      <a href="https://www.thairm.com/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:10px 14px;justify-self:start;transition:all 0.3s;display:inline-block;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)';" onmouseout="this.style.background='transparent';this.style.color='var(--accent)';">Visit Thairm →</a>
+    </article>
+
+    <article class="investor">
+      <div class="investor-num">ii.</div>
+      <div class="investor-body">
+        <h3><a href="https://www.thebank.scot/" target="_blank" rel="noopener">Scottish National Investment Bank</a></h3>
+        <div class="investor-type">Public Investment Bank · Patient capital</div>
+        <p class="investor-role">Scotland's first development investment bank, wholly owned by the Scottish Government and capitalised with a £2bn ten-year commitment. Co-led the latest round; contributed £6m to the 2024 raise alongside other equity.</p>
+        <ul class="rounds-list">
+          <li><span class="round-date">Apr 2026</span><span class="round-detail">Co-led <span class="amount">£19m</span> round with Thairm Bio</span></li>
+          <li><span class="round-date">Apr 2024</span><span class="round-detail"><span class="amount">£6m</span> contribution within £27m round</span></li>
+        </ul>
+      </div>
+      <a href="https://www.thebank.scot/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:10px 14px;justify-self:start;transition:all 0.3s;display:inline-block;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)';" onmouseout="this.style.background='transparent';this.style.color='var(--accent)';">Visit SNIB →</a>
+    </article>
+
+    <article class="investor">
+      <div class="investor-num">iii.</div>
+      <div class="investor-body">
+        <h3><a href="https://www.kineticos.com/" target="_blank" rel="noopener">Kineticos Life Sciences / Ventures</a></h3>
+        <div class="investor-type">US Life Sciences Investor · Strategic</div>
+        <p class="investor-role">North Carolina-based life sciences consulting firm and venture capital company. Kineticos Ventures (the VC arm, led by President Frank Lis) joined as a new investor at Series A and continued into the 2024 round.</p>
+        <ul class="rounds-list">
+          <li><span class="round-date">Apr 2024</span><span class="round-detail">Participated in <span class="amount">£27m</span> round</span></li>
+          <li><span class="round-date">Sep 2021</span><span class="round-detail">Joined <span class="amount">$21.5m</span> Series A as new US investor</span></li>
+        </ul>
+      </div>
+      <a href="https://www.kineticos.com/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:10px 14px;justify-self:start;transition:all 0.3s;display:inline-block;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)';" onmouseout="this.style.background='transparent';this.style.color='var(--accent)';">Visit Kineticos →</a>
+    </article>
+
+    <article class="investor">
+      <div class="investor-num">iv.</div>
+      <div class="investor-body">
+        <h3><a href="https://www.scottish-enterprise.com/" target="_blank" rel="noopener">Scottish Enterprise</a></h3>
+        <div class="investor-type">Public Economic Development Investor · Existing</div>
+        <p class="investor-role">Scotland's national economic development agency, with a Growth Equity arm that has been an existing investor across multiple EnteroBiotix rounds since the early stages.</p>
+        <ul class="rounds-list">
+          <li><span class="round-date">Apr 2024</span><span class="round-detail">Existing investor in <span class="amount">£27m</span> round</span></li>
+          <li><span class="round-date">Sep 2021</span><span class="round-detail">Existing investor in <span class="amount">$21.5m</span> Series A</span></li>
+          <li><span class="round-date">2019 →</span><span class="round-detail">Earlier-round backer</span></li>
+        </ul>
+      </div>
+      <a href="https://www.scottish-enterprise.com/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:10px 14px;justify-self:start;transition:all 0.3s;display:inline-block;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)';" onmouseout="this.style.background='transparent';this.style.color='var(--accent)';">Visit Scottish Enterprise →</a>
+    </article>
+
+    <article class="investor">
+      <div class="investor-num">v.</div>
+      <div class="investor-body">
+        <h3><a href="https://www.sisventures.com/" target="_blank" rel="noopener">SIS Ventures</a></h3>
+        <div class="investor-type">Mission-Aligned Investor · Existing</div>
+        <p class="investor-role">Wholly-owned subsidiary of Social Investment Scotland, FCA-authorised and launched in 2018. Invested in EnteroBiotix's £2m round in 2019 and the Series A in 2021, with a focus on locking the social mission into the company's articles.</p>
+        <ul class="rounds-list">
+          <li><span class="round-date">Sep 2021</span><span class="round-detail">Existing investor in <span class="amount">$21.5m</span> Series A</span></li>
+          <li><span class="round-date">2019</span><span class="round-detail">Backed earlier <span class="amount">£2m</span> oversubscribed round</span></li>
+        </ul>
+      </div>
+      <a href="https://www.sisventures.com/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:10px 14px;justify-self:start;transition:all 0.3s;display:inline-block;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)';" onmouseout="this.style.background='transparent';this.style.color='var(--accent)';">Visit SIS Ventures →</a>
+    </article>
+
+  </div>
+
+  <!-- ─── Timeline ─── -->
+  <div class="section-head">
+    <div class="section-num">§ 02</div>
+    <h2>Funding timeline</h2>
+  </div>
+
+  <div class="timeline-wrap">
+    <div class="timeline">
+      <div class="timeline-track">
+
+        <div class="tl-event">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2019</div>
+          <div class="tl-amt">£2m</div>
+          <div class="tl-leads">Oversubscribed seed-style round · SIS Ventures</div>
+        </div>
+
+        <div class="tl-event">
+          <div class="tl-dot lg"></div>
+          <div class="tl-date">Sep 2021</div>
+          <div class="tl-amt">$21.5m</div>
+          <div class="tl-leads">Series A · led by Thairm Bio</div>
+        </div>
+
+        <div class="tl-event">
+          <div class="tl-dot lg"></div>
+          <div class="tl-date">Apr 2024</div>
+          <div class="tl-amt">£27m</div>
+          <div class="tl-leads">Thairm, Kineticos & SNIB</div>
+        </div>
+
+        <div class="tl-event">
+          <div class="tl-dot lg"></div>
+          <div class="tl-date">Apr 2026</div>
+          <div class="tl-amt">£19m</div>
+          <div class="tl-leads">Co-led · Thairm Bio + SNIB</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Sources ─── -->
+  <div class="section-head">
+    <div class="section-num">§ 03</div>
+    <h2>Primary sources</h2>
+  </div>
+
+  <div class="sources">
+    <h4>Press releases & coverage</h4>
+    <div class="sources-grid">
+      <a href="https://www.enterobiotix.com/news/enterobiotix-completes-27m-financing-round" target="_blank" rel="noopener">
+        <span>EnteroBiotix · 2024</span>
+        £27m financing round announcement
+      </a>
+      <a href="https://www.enterobiotix.com/news/enterobiotix-raises-more-than-21m-in-series-a" target="_blank" rel="noopener">
+        <span>EnteroBiotix · 2021</span>
+        Series A press release
+      </a>
+      <a href="https://www.globenewswire.com/news-release/2026/04/29/3283601/0/en/enterobiotix-secures-19m-to-initiate-phase-2b-clinical-trial-for-irritable-bowel-syndrome.html" target="_blank" rel="noopener">
+        <span>GlobeNewswire · Apr 2026</span>
+        £19m round announcement
+      </a>
+      <a href="https://www.globenewswire.com/news-release/2024/04/04/2857500/0/en/EnteroBiotix-Completes-27m-Financing-Round-to-Advance-Clinical-Trials.html" target="_blank" rel="noopener">
+        <span>GlobeNewswire · Apr 2024</span>
+        £27m round announcement
+      </a>
+      <a href="https://www.kineticos.com/kineticos-invests-in-enterobiotix-funding-round-initiates-phase-2-study/" target="_blank" rel="noopener">
+        <span>Kineticos · 2024</span>
+        Investment in EnteroBiotix
+      </a>
+      <a href="https://www.sisventures.com/portfolio/enterobiotix/" target="_blank" rel="noopener">
+        <span>SIS Ventures · Portfolio</span>
+        EnteroBiotix profile
+      </a>
+      <a href="https://www.fiercebiotech.com/biotech/enterobiotix-secures-21-5m-series-a-funding-round-to-advance-its-microbiome-drug-pipeline" target="_blank" rel="noopener">
+        <span>Fierce Biotech · 2021</span>
+        Series A coverage
+      </a>
+      <a href="https://www.finsmes.com/2024/04/enterobiotix-closes-27m-financing-round.html" target="_blank" rel="noopener">
+        <span>FinSMEs · 2024</span>
+        £27m round summary
+      </a>
+      <a href="https://pitchbook.com/profiles/company/182454-94" target="_blank" rel="noopener">
+        <span>PitchBook</span>
+        EnteroBiotix company profile
+      </a>
+      <a href="https://www.scotsman.com/business/glasgow-life-sciences-pioneer-behind-ibs-treatment-gets-ps19m-boost-in-one-of-largest-investments-of-its-kind-8490834" target="_blank" rel="noopener">
+        <span>The Scotsman · Apr 2026</span>
+        £19m boost — IBS clinical trial
+      </a>
+      <a href="https://www.insider.co.uk/news/gut-health-firm-enterobiotix-secures-32509529" target="_blank" rel="noopener">
+        <span>Business Insider · 2024</span>
+        Gut health firm £27m
+      </a>
+      <a href="https://www.enterobiotix.com/" target="_blank" rel="noopener">
+        <span>EnteroBiotix</span>
+        Company website
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Compiled May 2026 · All round amounts and lead investors confirmed against primary press releases.</p>
+    <p style="opacity:0.6;">Linked sources open in new tabs · Round details accurate as of date of original announcement.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
